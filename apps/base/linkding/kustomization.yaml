@@ -4,6 +4,6 @@ kind: Kustomization
 resources:
   - namespace.yaml
   # - secrets.yaml
-  - networking.yaml
-  - deployment.yaml
-  - storage.yaml
+  # - networking.yaml
+  # - deployment.yaml
+  # - storage.yaml
