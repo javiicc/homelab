@@ -1,14 +1,14 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  annotations:
-    cert-manager.io/cluster-issuer: letsencrypt-staging
+  # annotations:
+    # cert-manager.io/cluster-issuer: letsencrypt-staging
   name: linkding
   namespace: linkding
 spec:
   ingressClassName: traefik
   rules:
-    - host: linkding-staging.javiercastano.xyz
+    - host: linkding.javiercastano.xyz
       http:
         paths:
           - backend:
