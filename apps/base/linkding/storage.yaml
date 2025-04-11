@@ -10,6 +10,14 @@ spec:
   storageClassName: local-storage
   local:
     path: /mnt/data/linkding
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+      - matchExpressions:
+        - key: kubernetes.io/hostname
+          operator: In
+          values:
+          - homelabserver
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
