@@ -1,8 +1,22 @@
 apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: linkding-data-pv
+spec:
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: local-storage
+  local:
+    path: /mnt/data/linkding
+---
+apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: linkding-data-pvc
 spec:
+  storageClassName: local-storage
   accessModes:
     - ReadWriteOnce
   resources:
