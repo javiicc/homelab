@@ -32,7 +32,6 @@ spec:
       targetPath: grafana.adminPassword
   values:
     grafana:
-      adminPassword: testpswd
       ingress:
         enabled: true
         ingressClassName: traefik
