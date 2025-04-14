@@ -16,7 +16,6 @@ spec:
   valuesFrom:
     - kind: ConfigMap
       name: traefik-configmap
-      namespace: traefik
       valuesKey: traefik-chart-values.yaml
 ---
 apiVersion: v1
