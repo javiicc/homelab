@@ -1,8 +1,10 @@
-apiVersion: helm.toolkit.fluxcd.io/v2
-kind: HelmRelease
+apiVersion: v1
+kind: ConfigMap
 metadata:
-  name: traefik
+  name: traefik-configmap
   namespace: traefik
-spec:
-  valuesFiles:
-    - ./chart-values.yaml
+data:
+  traefik-chart-values.yaml: |
+    ingressRoute:
+      dashboard:
+        enabled: false

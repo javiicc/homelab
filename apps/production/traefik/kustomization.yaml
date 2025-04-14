@@ -5,11 +5,5 @@ resources:
   - ../../base/traefik/
   - cloudflare-secret.yaml
 
-patchesStrategicMerge:
-  - traefik-patch.yaml
-
-# patches:
-#   - path: traefik-patch.yaml
-#     target:
-#       kind: HelmRelease
-#       name: traefik
+# patchesStrategicMerge:
+#   - traefik-patch.yaml
