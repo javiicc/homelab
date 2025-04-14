@@ -13,6 +13,14 @@ spec:
         namespace: traefik
       version: 35.0.0
   interval: 12h
+  values:
+    securityContext:
+      allowPrivilegeEscalation: false
+      readOnlyRootFilesystem: true
+    podSecurityContext:
+      runAsGroup: 65532
+      runAsNonRoot: true
+      runAsUser: 65532
   valuesFrom:
     - kind: ConfigMap
       name: traefik-configmap
