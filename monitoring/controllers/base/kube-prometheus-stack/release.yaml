@@ -41,3 +41,6 @@ spec:
           traefik.ingress.kubernetes.io/router.tls.certresolver: cloudflare
         hosts:
           - grafana.javiercastano.xyz
+        tls:
+          - hosts:
+            - grafana.javiercastano.xyz
