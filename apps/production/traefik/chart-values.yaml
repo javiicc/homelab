@@ -12,10 +12,10 @@ ports:
     redirectTo: websecure
 
 env:
-  - name: CF_API_TOKEN
+  - name: CLOUDFLARE_DNS_API_TOKEN
     valueFrom:
       secretKeyRef:
-        key: apiToken
+        key: dnsApiToken
         name: cloudflare-api-credentials
 
 ingressRoute:
