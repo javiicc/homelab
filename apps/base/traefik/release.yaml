@@ -62,3 +62,5 @@ data:
       existingClaim: traefik-cert-pvc
       path: /certs
       size: 128Mi
+    service:
+      type: NodePort
