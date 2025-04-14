@@ -35,7 +35,11 @@ data:
       - --certificatesresolvers.cloudflare.acme.storage=/certs/acme.json
     ports:
       web:
-        redirectTo: websecure
+        redirections:
+          entryPoint:
+            to: websecure
+            scheme: https
+            permanent: true
     env:
       - name: CF_API_TOKEN
         valueFrom:
