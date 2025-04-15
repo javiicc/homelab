@@ -64,11 +64,11 @@ data:
       size: 128Mi
     service:
       type: NodePort
-      spec:
-        ports:
-          - name: web
-            port: 80
-            nodePort: 30080
-          - name: websecure
-            port: 443
-            nodePort: 30443
+      # spec:
+      #   ports:
+      #     - name: web
+      #       port: 80
+      #       nodePort: 30080
+      #     - name: websecure
+      #       port: 443
+      #       nodePort: 30443
