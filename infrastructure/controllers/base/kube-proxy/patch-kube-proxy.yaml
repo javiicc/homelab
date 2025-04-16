@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: kube-proxy
+  namespace: kube-system
+spec:
+  template:
+    spec:
+      containers:
+      - name: kube-proxy
+      # This patch helps add the secret reference to the 
+      # kube-proxy DaemonSet previously created by kubeadm.
+      # The kube-apiserver secret contains the kube-apiserver
+      # URL, just to avoid publishing it in a public repository.
+      # Once the secret is loaded in an environment variable, it can 
+      # be injected into the the configMap.
+        env:
+        - name: K8S_APISERVER_URL
+          valueFrom:
+            secretKeyRef:
+              name: kube-apiserver
+              key: server
