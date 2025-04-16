@@ -3,4 +3,6 @@ kind: Kustomization
 resources:
   - configmap.yaml
   - kube-apiserver-secret.yaml
+
+patchesStrategicMerge:
   - patch-kube-proxy.yaml
